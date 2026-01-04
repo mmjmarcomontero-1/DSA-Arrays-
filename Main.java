@@ -1,51 +1,34 @@
-import java.nio.channels.Pipe.SourceChannel;
 import java.util.Scanner;
 
 
 
+
     public class Main{
+        public static void main(String[] args){
 
-        static boolean def(int[] arr,int k){
+        int[] arr = {3,0,9,12,15,0,0,6};
 
-            if(arr[k]<arr[k+1]){
- 
+        int nz = 0;
+        int  z = 0;
 
-                return true;
+        while(nz<arr.length){
+
+            if(arr[nz]!=0){
+
+                int temp = arr[nz];
+                arr[nz] = arr[z];
+                arr[z] = temp;
+                    nz++;
+                     z++;
 
             }else{
 
-                return false;
-
-            }
-        }
-
-
-
-            public static void main(String[] args){
-
-
-                boolean result = false;
-
-                int[] arr = {1,3,5,7,9,11,13,15,100,};
-
-
-                for(int i = 0;i<arr.length-1;i++){
-
-                   result = ( def(arr,i)) ;
-
-                    if(result==false){
-                        System.out.println("The function isn't order in lower higher values");
-                        return;
-
-                    }
+                nz++;
 
                 }
-
-                System.out.println("The function is order in Higher Lower values");
-
-
-
-
-
-        }
+            }
+            for (int k : arr) {
+                System.out.println(k);
+            }
+        } 
     }
