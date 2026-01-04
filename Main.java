@@ -1,34 +1,35 @@
 import java.util.Scanner;
 
 
-
-
     public class Main{
         public static void main(String[] args){
 
-        int[] arr = {3,0,9,12,15,0,0,6};
+            int[] arr = {1,2,3,4,5,6,7,8,9,10};
+            int[] arr2 = new int[arr.length];
+            arr2[0] = arr[0];
+            int j = 1;
+            int sum = 0;
 
-        int nz = 0;
-        int  z = 0;
 
-        while(nz<arr.length){
+          
 
-            if(arr[nz]!=0){
+            for(int i = 1;i<arr.length;i++){
 
-                int temp = arr[nz];
-                arr[nz] = arr[z];
-                arr[z] = temp;
-                    nz++;
-                     z++;
+                sum += arr[i-1];
 
-            }else{
-
-                nz++;
-
-                }
+                arr2[j]=sum;
+                j++;
             }
-            for (int k : arr) {
-                System.out.println(k);
-            }
-        } 
+
+
+
+
+
+for (int z : arr2) {
+    System.out.println(z);
+}
+
+
+
+        }
     }
