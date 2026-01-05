@@ -1,29 +1,58 @@
 import java.util.Scanner;
 
+
     public class Main{
-        public static void main(String[] args){
 
-            int[] arr = {1,2,3,4,5,6,7,8,9,10};
-            int[] arr2 = new int[arr.length];
-            int k = 5;
+        static void Rotate(int[] arr){
 
-            for(int i = 0;i<5;i++){
+            int temp = arr[0];
 
-                arr2[i] = arr[i];
+            for(int i = 1;i<arr.length;i++){
+
+                arr[i-1] = arr[i];
+            }
+            arr[arr.length-1] = temp;
+        }
+
+        static void rotate(int[] arr,int k){
+
+            k %= arr.length;
+            if(k<0){
+
+                k += arr.length;
 
             }
 
-            for(int i = 9;i>4;i--){
-            
-            arr2[k] = arr[i];
-            k++;
+            for(int i = 1;i<=k;i++){
 
+                Rotate(arr);
+
+            }
         }
 
-        for (int z : arr2) {
-            System.out.println(z);
+
+        static void main(String[] args){
+            Scanner o = new Scanner(System.in);
+            int[] arr = {1,2,3,4,5,6,7,8,9,10};
+
+            System.out.println("Enter a number,positive for turnin right(e.g 2 3 4 5 1 ) or negative to turn left (e.g 5 1 2 3 4)" );
+            int k = o.nextInt();
+
+ 
+            rotate(arr,k);
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         }
-
-    }
-
     }
