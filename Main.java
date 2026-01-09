@@ -1,28 +1,54 @@
 import java.util.Scanner;
+import java.util.HashMap;
 
 
     public class Main{
         public static void main(String[] args){
 
-            int[] arr = {1,2,2,3,4,5,6,7,8,9,10,10,10,10,10};
-                int Index = -1;
+            int[] arr = {1,2,3,4,4,5,6,7,8,9,10};
+            HashMap<Integer, Integer> count = new HashMap<>();
 
-            outer:
-            for(int i = 0;i<arr.length;i++){
-                for(int k = 0;k<i;k++){
 
-                    if(arr[i]==arr[k]){
-                        Index = i;
-                        break outer;
+            for (int numbers : arr) {
+                
+                if(count.containsKey(numbers)){
 
-                    }
+                    int actualValue = count.get(numbers);
+                    count.put(numbers,actualValue+1);
+                }else{
+
+                count.put(numbers,1);
+            }
+            }
+
+
+            for (Integer num : count.keySet()){
+
+                if(count.get(num)>1){
+
+                    System.out.println("Numbers wich appear more than 1 time: "+num);
+
                 }
+                
             }
-            if(Index<0)
-                System.out.println("Ther's not number repeated");
-            else{
 
-                System.out.println("The first number repeated is: "+arr[Index]);
-            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         }
     }
